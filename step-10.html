@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 9: Serviços</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="/lib/jquery.js"></script>
+  <script src="js/step10.js"></script>
+  <script src="js/local_phone_db.js"></script>
+  <script src="js/home_phone_api_mock.js"></script>
+</head>
+<body ng-app="home" ng-controller="MyCtrl">
+  <div class="container">
+    <h1>Step 10: Mockando AJAX</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-9.html">&lt;&lt; Step 9: Serviços</a></span>
+        <span class="pull-right"><a href="step-11.html">Step 11: Mock AJAX Util &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Fazendo de conta que tem um servidor</h1>
+
+    <img src="img/loader.gif" ng-show="loading">
+    <div ng-show="selected_phone && !loading" class="row">
+      <div class="span6">
+        <img ng-src="{{selected_phone.selected_image}}" class="bordinha">
+        <div class="row">
+          <img ng-repeat="image in selected_phone.images" ng-src="{{image}}" class="thumb40" ng-click="select_image(image)">
+        </div>
+      </div>
+      <div class="span6">
+        <div>
+          <div>
+            id: {{ selected_phone.id }}
+          </div>
+          <div>
+            Dimensions: {{ selected_phone.sizeAndWeight.dimensions }}
+          </div>
+          <div>
+            Flash: {{ selected_phone.storage.flash }}
+          </div>
+          <div>
+            CPU: {{ selected_phone.hardware.cpu }}
+          </div>
+          <div>
+            Additional Features: {{ selected_phone.additionalFeatures }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+        <table class="table">
+          <tr>
+            <th></th>
+            <th>Modelo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr ng-repeat="phone in phones" ng-click="select(phone)" ng-class="{selected: phone.id == selected_phone.id}">
+            <td><img ng-src="{{phone.imageUrl}}" class="thumb40"></td>
+            <td>{{phone.name}}</td>
+            <td>{{phone.snippet}}</td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</body>
+</html>

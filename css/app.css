@@ -1,0 +1,25 @@
+/* app css stylesheet */
+
+.cabeca_pra_baixo {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.bordinha {
+	border-radius: 10px;
+	border: solid;
+	padding: 5px;
+	border-width: 1px;
+}
+
+.thumb40 {
+	max-width: 40px;
+	max-height: 40px;
+}
+
+.selected {
+	background-color: #dff0d8;
+}

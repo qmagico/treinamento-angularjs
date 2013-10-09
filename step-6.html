@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 6: ng-repeat</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="js/step6.js"></script>
+</head>
+<body ng-app ng-controller="MyCtrl">
+  <div class="container">
+    <h1>Step 6: ng-repeat</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-5.html">&lt;&lt; Step 5: ng-click</a></span>
+        <span class="pull-right"><a href="step-7.html">Step 7: $digest() &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Uma tabelinha:</h1>
+
+    <div ng-show="selected_phone" class="row">
+      <div class="span6">
+        <img ng-src="{{selected_phone.imageUrl}}" class="bordinha">
+      </div>
+      <div class="span6">
+        <div>
+          <div>
+            id: {{ selected_phone.id }}
+          </div>
+          <div>
+            age: {{ selected_phone.age }}
+          </div>
+          <div>
+            Modelo: {{ selected_phone.name }}
+          </div>
+          <div>
+            Descrição: {{ selected_phone.snippet }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+        <table class="table">
+          <tr>
+            <th></th>
+            <th>Modelo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr ng-repeat="phone in phones" ng-click="select(phone)" ng-class="{selected: phone.is_selected}">
+            <td><img ng-src="{{phone.imageUrl}}" class="thumb40"></td>
+            <td>{{phone.name}}</td>
+            <td>{{phone.snippet}}</td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</body>
+</html>

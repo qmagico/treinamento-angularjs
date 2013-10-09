@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 5: ng-click</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="js/step5.js"></script>
+</head>
+<body ng-app ng-controller="MyCtrl">
+  <div class="container">
+    <h1>Step 5: ng-click</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-4.html">&lt;&lt; Step 4: O Controller</a></span>
+        <span class="pull-right"><a href="step-6.html">Step 6: ng-repeat &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Gira gira gira....</h1>
+    <div>
+        <img style="-webkit-transform: rotate({{angle}}deg);" src="img/tony.jpeg">
+    </div>
+
+    <hr>
+    <button ng-click="volta()">&lt;&lt;&lt;</button>
+    <button ng-click="vai()">&gt;&gt;&gt;</button>
+  </div>
+</body>
+</html>

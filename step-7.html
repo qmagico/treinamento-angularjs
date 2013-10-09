@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 7: $digest()</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="js/step7.js"></script>
+</head>
+<body ng-app ng-controller="MyCtrl">
+  <div class="container">
+    <h1>Step 7: $digest()</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-6.html">&lt;&lt; Step 6: ng-repeat</a></span>
+        <span class="pull-right"><a href="step-8.html">Step 8: AJAX com JQuery &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Uma barra de progresso</h1>
+
+    <div class="row">
+      <span>{{progress_bar()}}</span>
+      <strong>{{progress}}%</strong>
+    </div>
+    <button ng-show="progress < 100" ng-click="start()">Vai!</button>
+    <div class="row" ng-show="progress >= 100">
+      Acabou! :-)
+    </div>
+
+  </div>
+</body>
+</html>

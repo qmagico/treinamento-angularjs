@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 12: Diretivas - custom elements</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="/lib/jquery.js"></script>
+  <script src="js/step12.js"></script>
+  <script src="js/local_phone_db.js"></script>
+  <script src="js/home_phone_api_mock2.js"></script>
+  <script src="js/utils.js"></script>
+</head>
+<body ng-app="home" ng-controller="MyCtrl">
+  <div class="container">
+    <h1>Step 12: Diretivas - custom elements</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-11.html">&lt;&lt; Step 11: Mock AJAX Util</a></span>
+        <span class="pull-right"><a href="step-13.html">Step 13: Escopo isolado: @, = &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Isso aqui mudou minha vida...</h1>
+
+    <img src="img/loader.gif" ng-show="loading">
+
+    <phone-detail></phone-detail> <!-- Muito lindo isso :-) ... -->
+
+    <div>
+        <table class="table">
+          <tr>
+            <th></th>
+            <th>Modelo</th>
+            <th>Descrição</th>
+          </tr>
+          <tr ng-repeat="phone in phones" ng-click="select(phone)" ng-class="{selected: phone.id == selected_phone.id}">
+            <td><img ng-src="{{phone.imageUrl}}" class="thumb40"></td>
+            <td>{{phone.name}}</td>
+            <td>{{phone.snippet}}</td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</body>
+</html>

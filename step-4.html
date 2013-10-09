@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 4: O Controller</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+  <script src="js/step4.js"></script>
+</head>
+<body ng-app ng-controller="MyCtrl">
+  <div class="container">
+    <h1>Step 4: O Controller</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-3.html">&lt;&lt; Step 3: ng-class, ng-show e ng-hide</a></span>
+        <span class="pull-right"><a href="step-5.html">Step 5: ng-click &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Reverse</h1>
+    Digita um texto: <input type="text" ng-model="meutexto">
+    <div class="well">
+      <p> Seu texto, de trás pra frente: <strong>{{meutexto_reversed()}}</strong></p>
+    </div>
+
+    <hr>
+    <h1>Equação do segundo grau</h1>
+    A: <input type="text" ng-model="a">
+    B: <input type="text" ng-model="b">
+    C: <input type="text" ng-model="c">
+    <div class="well">
+      <p> A equação do segundo grau é <strong>{{a}}x2 + {{b}}x + {{c}} = 0</strong></p>
+      <p> O delta é {{delta(a, b, c)}}</p>
+      <p> As raízes são {{r1()}} e {{r2()}}</p>
+    </div>
+  </div>
+</body>
+</html>

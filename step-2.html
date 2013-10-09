@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 2: ng-model</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="/lib/angular/angular.js"></script>
+</head>
+<body ng-app>
+  <div class="container">
+    <h1>Step 2: ng-model</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-1.html">&lt;&lt; Step 1: Hello World</a></span>
+        <span class="pull-right"><a href="step-3.html">Step 3: ng-class &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h2>1. Texto</h2>
+    <div class="row">
+        Digita aí: <input type="text" ng-model="meutexto">
+        <div class="well">
+            Olha aí, {{'você digitou: ' + meutexto}}
+        </div>
+    </div>
+
+    <hr>
+    <h2>2. Número tá safo tb</h2>
+    <div class="row">
+        Bota um número aí: <input type="text" ng-model="umnumero">
+        <div class="well">
+            O número ao quadrado é <strong>{{ umnumero * umnumero }}</strong>
+            (pois é, o javascript não tá nem aí se isso é uma string, vc não sabia?)
+        </div>
+    </div>
+
+    <hr>
+    <h2>3. Select pega o value</h2>
+    <div class="row">
+        E com select?
+        <select ng-model="myoption">
+            <option value="um">Primeiro</option>
+            <option value="2">Segundo</option>
+            <option value="III">Terceiro</option>
+        </select>
+        <div class="well">
+            Você escolheu <strong>{{ myoption }}</strong>
+        </div>
+    </div>
+
+    <hr>
+    <h2>4. Checkbox vira boolean</h2>
+    <div class="row">
+        (lógico)...
+        <input type="checkbox" ng-model="meubooleano">
+        <div class="well">
+            Tá marcado? <strong>{{ meubooleano }}</strong>
+        </div>
+    </div>
+
+    <hr>
+    <h2>5. E se o select for multi?</h2>
+    <div class="row">
+        O que acontece?
+        <select ng-model="myoptions" multiple>
+            <option value="um">Primeiro</option>
+            <option value="2">Segundo</option>
+            <option value="III">Terceiro</option>
+        </select>
+        <div class="well">
+            Você escolheu <strong>{{ myoptions }}</strong>, essa nem eu sabia (mas eu desconfiava...)
+        </div>
+    </div>
+
+  </div>
+</body>
+</html>

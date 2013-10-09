@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Step 3: ng-class, ng-show e ng-hide</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/lib/angular/angular.js"></script>
+</head>
+<body ng-app>
+  <div class="container">
+    <h1>Step 3: ng-class, ng-show e ng-hide</h1>
+    <div class="row">
+        <span class="pull-left"><a href="step-2.html">&lt;&lt; Step 2: ng-model</a></span>
+        <span class="pull-right"><a href="step-4.html">Step 4: O controller &gt;&gt;</a></span>
+    </div>
+    <hr>
+    <h1>Esconde-esconde</h1>
+    <span ng-hide="esconde">Agora você está me vendo...</span>
+    <span ng-show="esconde">E agora não!</span>
+    <input type="checkbox" ng-model="esconde"> Esconde!
+    <div>
+        <img ng-hide="esconde" ng-class="{cabeca_pra_baixo: virado, bordinha: combordinha}" src="http://www.gravatar.com/avatar/4dbc40e7a6fa89a3568a926378c22ace?d=identicon&s=256">
+    </div>
+    <input type="checkbox" ng-model="virado"> Vira!
+    <input type="checkbox" ng-model="combordinha"> Bota uma bordinha!
+  </div>
+</body>
+</html>
