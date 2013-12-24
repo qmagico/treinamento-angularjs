@@ -1,4 +1,4 @@
-function MyCtrl($scope){
+function MyCtrl($scope, $timeout){
 
 	$scope.progress = 0;
 
@@ -12,12 +12,11 @@ function MyCtrl($scope){
 	function tick(){
 		if($scope.progress < 100){
 			$scope.progress++;
-			setTimeout(tick, 50);
-			$scope.$digest();
+			$timeout(tick, 50);
 		}
 	}
 
 	$scope.start = function(){
-		setTimeout(tick, 0)
+        $timeout(tick, 0);
 	}
 }
