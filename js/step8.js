@@ -1,13 +1,12 @@
-function MyCtrl($scope){
+function MyCtrl($scope, $http){
 
     $scope.select = function(p){
         var path = 'phones/'+p.id+'.json';
         $scope.loading = true;
-        $.get(path).success(function(data){
+        $http.get(path).success(function(data){
             $scope.loading = false;
             $scope.selected_phone = data;
             $scope.selected_phone.selected_image = data.images[0];
-            $scope.$digest()
         });
     };
 
