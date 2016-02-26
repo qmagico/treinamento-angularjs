@@ -1,9 +1,12 @@
-function MyCtrl($scope){
+function MyCtrl($scope, $timeout){
 
 	$scope.progress = 0;
+    $scope.isRunning = false;
+
 
 	var DOTS = '....................................................................................................';
 	var PIPES = '||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||';
+    var isRunning = true;
 
 	$scope.progress_bar = function (){
 		return '[' + PIPES.substring(0, $scope.progress) + DOTS.substring(0, 100 - $scope.progress) + ']'
@@ -12,12 +15,15 @@ function MyCtrl($scope){
 	function tick(){
 		if($scope.progress < 100){
 			$scope.progress++;
-			setTimeout(tick, 50);
-			$scope.$digest();
-		}
+			$timeout(tick, 50);
+            $scope.isRunning = true;
+		} else {
+            $scope.isRunning = false;
+        }
 	}
 
 	$scope.start = function(){
-		setTimeout(tick, 0)
+        if(!$scope.isRunning)
+            $timeout(tick, 0);
 	}
 }
