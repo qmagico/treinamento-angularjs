@@ -1,9 +1,9 @@
 var mod = angular.module('home', [])
 
-mod.factory('PhoneApi', function(){
+mod.factory('PhoneApi', function($http){
     function get_phone(id){
         var path = 'phones/'+id+'.json';
-        return $.get(path);
+        return $http.get(path);
     }
 
     return {
@@ -20,7 +20,6 @@ function MyCtrl($scope, PhoneApi){
             $scope.loading = false;
             $scope.selected_phone = data;
             $scope.selected_phone.selected_image = data.images[0];
-            $scope.$digest()
         });
     };
 
